@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "./getquote.css"
 
 const GetQuote = () => {
     const [quoteArray,setQuoteArray] = useState([]);
@@ -22,10 +23,10 @@ const GetQuote = () => {
     let [quoteDisplayed, setQuoteDisplayed]= useState(quoteArray[getRandomInt(quoteArray.length)]);
     const handleClick = () => {setQuoteDisplayed(quoteArray[getRandomInt(quoteArray.length)])};
 
-    return (<div>
-        <h3>{(((quoteDisplayed == undefined ? "Either you run the day, or the day runs you." : quoteDisplayed.quote)))}</h3>
-        <h4>{(((quoteDisplayed == undefined ? "Jim Rohn" : quoteDisplayed.author)))}</h4>
-        <button onClick={handleClick}>New Quote</button>
+    return (<div className="myDiv">
+        <h3>{(((quoteDisplayed == undefined ? "The purpose of our lives is to be happy." : quoteDisplayed.quote)))}</h3>
+        <h4 className="myAuthor">{(((quoteDisplayed == undefined ? "Dalai Lama" : quoteDisplayed.author)))}</h4>
+        <button className="button" onClick={handleClick}>New Quote</button>
         </div>)
 }
 export default GetQuote;
