@@ -15,12 +15,17 @@ const GetQuote = () => {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+    
+  
+    /*let quoteDisplayed = (quoteArray[getRandomInt(quoteArray.length)])*/
 
-    let quoteDisplayed = (quoteArray[getRandomInt(quoteArray.length)])
+    let [quoteDisplayed, setQuoteDisplayed]= useState(quoteArray[getRandomInt(quoteArray.length)]);
+    const handleClick = () => {setQuoteDisplayed(quoteArray[getRandomInt(quoteArray.length)])};
 
     return (<div>
-        <h3>{(((quoteDisplayed == undefined ? "loading" : quoteDisplayed.quote)))}</h3>
-        <h4>{(((quoteDisplayed == undefined ? "loading" : quoteDisplayed.author)))}</h4>
+        <h3>{(((quoteDisplayed == undefined ? "Either you run the day, or the day runs you." : quoteDisplayed.quote)))}</h3>
+        <h4>{(((quoteDisplayed == undefined ? "Jim Rohn" : quoteDisplayed.author)))}</h4>
+        <button onClick={handleClick}>New Quote</button>
         </div>)
 }
 export default GetQuote;
