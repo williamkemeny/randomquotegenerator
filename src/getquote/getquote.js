@@ -49,11 +49,9 @@ const GetQuote = () => {
   return (
     <div className="myDiv" id="quote-box">
       <h3 className="quote" id="text">
-        {
-          (quoteDisplayed = undefined
-            ? "The purpose of our lives is to be happy."
-            : quoteDisplayed.quote)
-        }
+        {quoteDisplayed === undefined
+          ? "The purpose of our lives is to be happy."
+          : quoteDisplayed.quote}
       </h3>
       <h4 className="quote-author" id="author">
         {quoteDisplayed === undefined ? "Dalai Lama" : quoteDisplayed.author}
